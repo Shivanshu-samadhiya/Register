@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+  </head>
+  <style>
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: sans-serif;
+    }
+    
+    .main{
+      width: 100%;
+      height: 100%;
+    }
+    .container-box{
+      width: 100%;
+      height: 100%;
+      background-color:honeydew;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: nowrap;
+    } 
+    .card{
+      width: 19rem;
+    }
+  </style>
+  <body>
+    <div class="main">
+    <nav class="navbar bg-dark">
+      <div class="container-fluid">
+        <a class="navbar-brand" style="color: #fff;">Navbar</a>
+        <form class="d-flex" role="search">
+          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>
+      </div>
+    </nav>
+    <div class="container-box p-5 d-flex" style="gap: 20px">
+    <% alluser.forEach(function(user){ %>
+      <div class="card">
+        <img src="<%= user.image %>" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title"><%= user.username %></h5>
+          <p class="card-text"><%= user.email %></p>
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+          <h6>Likes <%= user.Likes.length %></h6>
+          <a href="/delete/<%= user._id %>" class="btn btn-danger">delete</a>
+          <a href="/edit/<%= user._id %>" class="btn btn-warning">edit</a>
+          <a href="/like/<%= user._id %>" class="btn btn-success">Like</a>
+          <a href="/unlike/<%= user._id %>" class="btn btn-primary">UnLike</a>
+        </div>
+      </div>
+    <% }) %>
+    </div>
+  </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+  </body>
+</html>

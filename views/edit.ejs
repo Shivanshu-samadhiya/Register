@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel='stylesheet' href='../stylesheets/style.css' />
+</head>
+<body>
+    <div class="outerbox">
+        <div class="inner-box">
+            <header class="signup-header">
+              <h1>Upadte Detail</h1>
+           <p>It just takes 30 second</p>
+          </header>
+          <main class="signup-page">
+    <form action="/update/<%=foundUser._id %>" method="post">
+        <p>
+        <label for="User Name">User Name</label>
+        <input type="text" name="userName"placeholder="userName" value="<%= foundUser.username %>">
+         </p>
+         <p>
+        <label for="age">Your Age</label>
+        <input type="text" name="age" placeholder="age" value="<%= foundUser.age %>" >
+         </p>
+         <p>
+        <label for="email">Your Email</label>
+        <input type="text" name="email" placeholder="email" value="<%= foundUser.email %> ">
+        </p>
+        <p>
+        <label for="Contact">Your Contact</label>
+        <input type="text" name="contact" placeholder="contact" value="<%= foundUser.contact %>">
+         </p>
+         <p>
+        <label for="Image">Image</label>
+        <input type="text" name="image" placeholder="image" value="<%= foundUser.image %>">
+        </p>
+        <p>
+      <input type="submit" id="submit" value="Update">
+    </p>
+      </form>
+    </main>
+    </div>
+    <div class="circle c1"></div>
+   <div class="circle c2"></div>
+</div>
+</body>
+</html>
